@@ -14,9 +14,10 @@ import os
 from dotenv import load_dotenv
 
 
-load_dotenv("C:/Users/user/PycharmProjects/Brians_Blog/variables.env")
-OWN_EMAIL = "tulkas930@gmail.com"
-OWN_PASSWORD = "Devilcris4!"
+load_dotenv("C:/Users/user/PycharmProjects/Brians_Blog/.env")
+OWN_EMAIL = os.getenv("MY_EMAIL_ID")
+OWN_PASSWORD = os.getenv("MY_EMAIL_PASSWORD")
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
@@ -79,7 +80,7 @@ class Comment(db.Model):
     comment_author = relationship("User", back_populates="comments")
     text = db.Column(db.Text, nullable=False)
 
-db.create_all()
+# db.create_all()
 
 
 ## Admin validation
