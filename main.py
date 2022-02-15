@@ -15,8 +15,8 @@ from dotenv import load_dotenv
 
 
 load_dotenv("C:/Users/user/PycharmProjects/Brians_Blog/.env")
-OWN_EMAIL = os.getenv("MY_EMAIL_ID")
-OWN_PASSWORD = os.getenv("MY_EMAIL_PASSWORD")
+OWN_EMAIL = os.environ.get("MY_EMAIL_ID")
+OWN_PASSWORD = os.environ.get("MY_EMAIL_PASSWORD")
 
 
 app = Flask(__name__)
